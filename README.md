@@ -8,13 +8,17 @@ The application will allow users to create, update, and delete tasks. Tasks shou
 ## Getting started
 
 To run the app use the commands below
+Open 2 terminals
 
+terminal 1
 ```
 cd backend
 npm i
 npx prisma migrate dev --name init
 npm run dev
-cd ..
+```
+terminal 2
+```
 cd frontend
 npm i
 npm run dev

@@ -252,24 +252,24 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-                {isEmpty(items) ?
-                    <div className='flex w-full h-screen rounded-md border p-4 justify-center items-center'>
-                        <div className='text-center'>Sorry no more items!</div>
-                    </div> :
-                    <div className='flex flex-col h-screen gap-4'>
-                        <Select onValueChange={setFilter}>
-                            <SelectTrigger className="w-[180px]">
-                                <SelectValue placeholder="All" />
-                            </SelectTrigger>
-                            <SelectContent>
-                                <SelectItem value="All">All</SelectItem>
-                                {Object.values(todo_status).map((statusValue) => (
-                                    <SelectItem key={statusValue} value={statusValue}>
-                                        {statusValue}
-                                    </SelectItem>
-                                ))}
-                            </SelectContent>
-                        </Select>
+                <div className='flex flex-col h-screen gap-4'>
+                    <Select onValueChange={setFilter}>
+                        <SelectTrigger className="w-[180px]">
+                            <SelectValue placeholder="All" />
+                        </SelectTrigger>
+                        <SelectContent>
+                            <SelectItem value="All">All</SelectItem>
+                            {Object.values(todo_status).map((statusValue) => (
+                                <SelectItem key={statusValue} value={statusValue}>
+                                    {statusValue}
+                                </SelectItem>
+                            ))}
+                        </SelectContent>
+                    </Select>
+                    {isEmpty(items) ?
+                        <div className='flex w-full h-screen rounded-md border p-4 justify-center items-center'>
+                            <div className='text-center'>Sorry no more items!</div>
+                        </div> :
                         <ScrollArea className="flex w-full h-full rounded-md border p-4 justify-center items-center">
                             <div className="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-5">
                                 {items.map((item, index) => {
@@ -367,8 +367,8 @@ const Home = () => {
                                 })}
                             </div>
                         </ScrollArea>
-                    </div>
-                }
+                    }
+                </div>
                 <Pagination>
                     <PaginationContent>
                         <PaginationItem>
