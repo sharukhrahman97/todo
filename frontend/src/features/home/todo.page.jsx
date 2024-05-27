@@ -252,7 +252,7 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-                <div className='flex flex-col h-screen gap-4'>
+                <div className='flex flex-col w-full h-screen gap-4'>
                     <Select onValueChange={setFilter}>
                         <SelectTrigger className="w-[180px]">
                             <SelectValue placeholder="All" />
@@ -267,7 +267,7 @@ const Home = () => {
                         </SelectContent>
                     </Select>
                     {isEmpty(items) ?
-                        <div className='flex w-full h-screen rounded-md border p-4 justify-center items-center'>
+                        <div className='flex w-full h-full rounded-md border p-4 justify-center items-center'>
                             <div className='text-center'>Sorry no more items!</div>
                         </div> :
                         <ScrollArea className="flex w-full h-full rounded-md border p-4 justify-center items-center">
