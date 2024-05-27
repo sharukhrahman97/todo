@@ -107,7 +107,7 @@ const Home = () => {
     useEffect(() => {
         if (isEmpty(account) && isEmpty(result)) {
             dispatch(readAccountThunk({ user: user }))
-            dispatch(readAllTodoThunk({ user: user, page: page, limit: limit }))
+            dispatch(readAllTodoThunk({ user: user, page: page, limit: limit, filter: filter }))
         }
     }, [])
 
@@ -125,19 +125,19 @@ const Home = () => {
 
     const handleUpdateTodo = (id) => async (values) => {
         await dispatch(updateTodoThunk({ user: user, id: id, title: values.title, description: values.description, status: values.status }))
-        await dispatch(readAllTodoThunk({ user: user, page: page, limit: limit }))
+        await dispatch(readAllTodoThunk({ user: user, page: page, limit: limit, filter: filter }))
         todoForm.reset()
     }
 
     const handleCreateTodo = async (values) => {
         await dispatch(createTodoThunk({ user: user, title: values.title, description: values.description, status: values.status }))
-        await dispatch(readAllTodoThunk({ user: user, page: page, limit: limit }))
+        await dispatch(readAllTodoThunk({ user: user, page: page, limit: limit, filter: filter }))
         todoForm.reset()
     }
 
     const handleDeleteTodo = async (id) => {
         await dispatch(deleteTodoThunk({ user: user, id: id }))
-        await dispatch(readAllTodoThunk({ user: user, page: page, limit: limit }))
+        await dispatch(readAllTodoThunk({ user: user, page: page, limit: limit, filter: filter }))
     }
 
     return (
