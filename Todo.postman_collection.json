@@ -1,0 +1,376 @@
+{
+	"info": {
+		"_postman_id": "628ddd5f-e6e5-4d34-a4c4-96d469b2ac2a",
+		"name": "Todo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11698155"
+	},
+	"item": [
+		{
+			"name": "Account",
+			"item": [
+				{
+					"name": "loginAccount",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const headers = pm.response.headers.all();\r",
+									"const token = headers.filter(header => header.key === 'cl-x-token');\r",
+									"const refresh = headers.filter(header => header.key === 'cl-x-refresh');\r",
+									"pm.environment.set(\"cl-x-token\",token[0].value);\r",
+									"pm.environment.set(\"cl-x-refresh\",refresh[0].value);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"rahul@gmail.com\",\r\n    \"password\": \"rahulk\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/account/loginAccount",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"account",
+								"loginAccount"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createAccount",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const headers = pm.response.headers.all();\r",
+									"const token = headers.filter(header => header.key === 'cl-x-token');\r",
+									"const refresh = headers.filter(header => header.key === 'cl-x-refresh');\r",
+									"pm.environment.set(\"cl-x-token\",token[0].value);\r",
+									"pm.environment.set(\"cl-x-refresh\",refresh[0].value);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"rahulk\",\r\n    \"email\": \"rahul@gmail.com\",\r\n    \"password\": \"rahulk\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/account/createAccount",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"account",
+								"createAccount"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "readAccount",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const headers = pm.response.headers.all();\r",
+									"const token = headers.filter(header => header.key === 'cl-x-token');\r",
+									"const refresh = headers.filter(header => header.key === 'cl-x-refresh');\r",
+									"pm.environment.set(\"cl-x-token\",token[0].value);\r",
+									"pm.environment.set(\"cl-x-refresh\",refresh[0].value);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "cl-x-token",
+								"value": "{{cl-x-token}}"
+							},
+							{
+								"key": "cl-x-refresh",
+								"value": "{{cl-x-refresh}}"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/account/readAccount",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"account",
+								"readAccount"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Todo",
+			"item": [
+				{
+					"name": "createTodo",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const headers = pm.response.headers.all();\r",
+									"const token = headers.filter(header => header.key === 'cl-x-token');\r",
+									"const refresh = headers.filter(header => header.key === 'cl-x-refresh');\r",
+									"pm.environment.set(\"cl-x-token\",token[0].value);\r",
+									"pm.environment.set(\"cl-x-refresh\",refresh[0].value);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "cl-x-token",
+								"value": "{{cl-x-token}}"
+							},
+							{
+								"key": "cl-x-refresh",
+								"value": "{{cl-x-refresh}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"hiyaa\",\r\n    \"description\":\"check this out man\",\r\n    \"status\":\"TODO\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/todo/createTodo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"todo",
+								"createTodo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateTodo",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const headers = pm.response.headers.all();\r",
+									"const token = headers.filter(header => header.key === 'cl-x-token');\r",
+									"const refresh = headers.filter(header => header.key === 'cl-x-refresh');\r",
+									"pm.environment.set(\"cl-x-token\",token[0].value);\r",
+									"pm.environment.set(\"cl-x-refresh\",refresh[0].value);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "cl-x-token",
+								"value": "{{cl-x-token}}"
+							},
+							{
+								"key": "cl-x-refresh",
+								"value": "{{cl-x-refresh}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"6d1e4804-1738-4e64-a257-07e60aef61b6\",\r\n    \"title\":\"hiyaas\",\r\n    \"description\":\"check this out man\",\r\n    \"status\":\"In_Progress\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/todo/updateTodo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"todo",
+								"updateTodo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "readAllTodo",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const headers = pm.response.headers.all();\r",
+									"const token = headers.filter(header => header.key === 'cl-x-token');\r",
+									"const refresh = headers.filter(header => header.key === 'cl-x-refresh');\r",
+									"pm.environment.set(\"cl-x-token\",token[0].value);\r",
+									"pm.environment.set(\"cl-x-refresh\",refresh[0].value);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "cl-x-token",
+								"value": "{{cl-x-token}}"
+							},
+							{
+								"key": "cl-x-refresh",
+								"value": "{{cl-x-refresh}}"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/todo/readAllTodo?page=1&limit=10&status=In_Progress",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"todo",
+								"readAllTodo"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "status",
+									"value": "In_Progress"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteTodo",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const headers = pm.response.headers.all();\r",
+									"const token = headers.filter(header => header.key === 'cl-x-token');\r",
+									"const refresh = headers.filter(header => header.key === 'cl-x-refresh');\r",
+									"pm.environment.set(\"cl-x-token\",token[0].value);\r",
+									"pm.environment.set(\"cl-x-refresh\",refresh[0].value);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "cl-x-token",
+								"value": "{{cl-x-token}}"
+							},
+							{
+								"key": "cl-x-refresh",
+								"value": "{{cl-x-refresh}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"6d05d9c6-a07d-4dfd-8914-c613e2f9c9bd\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/todo/deleteTodo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"todo",
+								"deleteTodo"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
