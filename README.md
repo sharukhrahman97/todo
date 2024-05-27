@@ -7,6 +7,8 @@ The application will allow users to create, update, and delete tasks. Tasks shou
 
 ## Getting started
 
+Better to use nvm lts! I'm using node version 20.12.2
+
 To run the app use the commands below
 Open 2 terminals
 
