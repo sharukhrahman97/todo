@@ -1,50 +1,51 @@
+*__pycache__*
+*.DS_Store*
+*.env
+*.tool-versions
+*.vscode*
 # Logs
-frontend/logs
-frontend/*.log
-frontend/npm-debug.log*
-frontend/yarn-debug.log*
-frontend/yarn-error.log*
-frontend/pnpm-debug.log*
-frontend/lerna-debug.log*
-frontend/node_modules
-frontend/dist
-frontend/dist-ssr
-frontend/*.local
+frontend/react/logs
+frontend/react/*.log
+frontend/react/npm-debug.log*
+frontend/react/yarn-debug.log*
+frontend/react/yarn-error.log*
+frontend/react/pnpm-debug.log*
+frontend/react/lerna-debug.log*
+frontend/react/node_modules
+frontend/react/dist
+frontend/react/dist-ssr
+frontend/react/*.local
 
 # Editor directories and files
-frontend/.vscode/*
-frontend/!.vscode/extensions.json
-frontend/.idea
-frontend/.DS_Store
-frontend/*.suo
-frontend/*.ntvs*
-frontend/*.njsproj
-frontend/*.sln
-frontend/*.sw?
+frontend/react/.idea
+frontend/react/*.suo
+frontend/react/*.ntvs*
+frontend/react/*.njsproj
+frontend/react/*.sln
+frontend/react/*.sw?
 
 # Logs
-backend/logs
-backend/*.log
-backend/npm-debug.log*
-backend/yarn-debug.log*
-backend/yarn-error.log*
-backend/pnpm-debug.log*
-backend/lerna-debug.log*
-backend/node_modules
-backend/dist
-backend/dist-ssr
-backend/*.local
+backend/express/logs
+backend/express/*.log
+backend/express/npm-debug.log*
+backend/express/yarn-debug.log*
+backend/express/yarn-error.log*
+backend/express/pnpm-debug.log*
+backend/express/lerna-debug.log*
+backend/express/node_modules
+backend/express/dist
+backend/express/dist-ssr
+backend/express/*.local
 
 # Editor directories and files
-backend/.vscode/*
-backend/!.vscode/extensions.json
-backend/.idea
-backend/.DS_Store
-backend/*.suo
-backend/*.ntvs*
-backend/*.njsproj
-backend/*.sln
-backend/*.sw?
+backend/express/.idea
+backend/express/*.suo
+backend/express/*.ntvs*
+backend/express/*.njsproj
+backend/express/*.sln
+backend/express/*.sw?
 
-backend/prisma/migrations
-backend/prisma/dev.db
+backend/express/prisma/migrations
+backend/express/prisma/dev.db
+
+backend/fastapi/.venv
